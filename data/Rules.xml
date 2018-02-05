@@ -28,10 +28,10 @@
         <Question>Do you want a movie for grown ups?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="yes"/>
+                <SingleValue value="yes"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="no"/>
+                <SingleValue value="no"/>
             </Selection>
         </Answer>
     </Rule>
@@ -40,10 +40,10 @@
         <Question>Do you want a realistic movie?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="yes"/>
+                <MultipleValue value="drama,comedy,action,documentary"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="no"/>
+                <MultipleValue value="sci-fi,fantasy,animation,horror"/>
             </Selection>
         </Answer>
     </Rule>
