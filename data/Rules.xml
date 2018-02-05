@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules>
+    <Rule id="funny">
+        <Question>Do you like funny movies?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="emotion">
+        <Question>Do you like sentimental movies?</Question>
+        <Answer>
+            <Selection value="true">
+                <SingleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <SingleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="over18">
+        <Question>Do you want a movie for grown ups?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+    ...
+    <Rule id="realistic">
+        <Question>Do you want a realistic movie?</Question>
+        <Answer>
+            <Selection value="true">
+                <MultipleValue value="yes"/>
+            </Selection>
+            <Selection value="false">
+                <MultipleValue value="no"/>
+            </Selection>
+        </Answer>
+    </Rule>
+</Rules>
