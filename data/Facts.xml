@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Facts>
+    <Fact id="scifa">
+        <Description value="Sci-fi and Fantasy"/>
+        <Evals>
+            <Eval id="funny">true</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">true</Eval>
+            <Eval id="realistic">false</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="drama">
+        <Description value="Drama"/>
+        <Evals>
+            <Eval id="funny">false</Eval>
+            <Eval id="emotion">true</Eval>
+            <Eval id="over18">false</Eval>
+            <Eval id="realistic">true</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="comedy">
+        <Description value="Comedy"/>
+        <Evals>
+            <Eval id="funny">true</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">false</Eval>
+            <Eval id="realistic">true</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="action">
+        <Description value="Action Movie"/>
+        <Evals>
+            <Eval id="funny">true</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">true</Eval>
+            <Eval id="realistic">true</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="animation">
+        <Description value="Animation Movie"/>
+        <Evals>
+            <Eval id="funny">true</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">false</Eval>
+            <Eval id="realistic">false</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="horror">
+        <Description value="Horror Movie"/>
+        <Evals>
+            <Eval id="funny">false</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">true</Eval>
+            <Eval id="realistic">false</Eval>
+        </Evals>
+    </Fact>
+    ...
+    <Fact id="documentary">
+        <Description value="Documentary Movie"/>
+        <Evals>
+            <Eval id="funny">false</Eval>
+            <Eval id="emotion">false</Eval>
+            <Eval id="over18">false</Eval>
+            <Eval id="realistic">true</Eval>
+        </Evals>
+    </Fact>
+</Facts>
