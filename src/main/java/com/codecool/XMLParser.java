@@ -1,8 +1,8 @@
 package com.codecool;
 
-public abstract class XMLParster {
+public abstract class XMLParser {
 
-    public XMLParster() {
+    public XMLParser() {
 
     }
 
