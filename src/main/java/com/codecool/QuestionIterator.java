@@ -13,7 +13,7 @@ public class QuestionIterator implements Iterator<Question> {
         this.currentSize = arrayList.length;
 }
 
-    @Override
+    //@Override
     public Iterator<Question> iterator() {
         Iterator<Question> it = new Iterator<Question>() {
 
@@ -29,11 +29,11 @@ public class QuestionIterator implements Iterator<Question> {
                 return arrayList[currentIndex++];
             }
 
-            /*@Override
+            @Override
             public void remove() {
                 throw new UnsupportedOperationException();
-            }*/
+            }
         };
         return it;
-
+    }
 }
