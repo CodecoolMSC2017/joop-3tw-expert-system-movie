@@ -2,8 +2,6 @@ package com.codecool;
 
 public class ESProvider {
 
-    public ESProvider() {
-    }
 
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
 
