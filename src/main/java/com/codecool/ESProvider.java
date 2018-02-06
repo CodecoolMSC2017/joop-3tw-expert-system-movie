@@ -16,7 +16,7 @@ public class ESProvider {
     }
 
     public String evaluate() {
-        String string = ""
+        String string = "";
         return string;
     }
 }
