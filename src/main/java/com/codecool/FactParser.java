@@ -13,9 +13,9 @@ public class FactParser extends XMLParser{
     public FactRepository getFactRepository() throws Exception {
         loadXmlDocument("data/Facts.xml");
         FactRepository factRepository = new FactRepository();
-        for (Element ruleElement : getElements("Fact")) {
+        for (Element factElement : getElements("Fact")) {
 
-            Node nNode = ruleElement;
+            Node nNode = factElement;
             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
                 id = eElement.getAttribute("id");
