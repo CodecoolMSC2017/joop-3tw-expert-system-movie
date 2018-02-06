@@ -5,18 +5,21 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RuleRepository {
-    private Iterator<Question> iterator;
-    private List<Question> list = new ArrayList<Question>();
 
-    public RuleRepository() {
+
+    private List<Fact> rules = new ArrayList<>();
+
+
+    public void addRule(Question question) {
+        rules.add(question);
     }
 
-    public void addQuestion(Question question) {
-        List.add(question);
+    public List<Question> getRuleList() {
+        return rules;
     }
 
     public Iterator<Question> getIterator() {
-        iterator = new QuestionIterator(list);
-        return iterator;
+
+        return null;
     }
 }
