@@ -31,9 +31,9 @@ public class RuleParser extends XMLParser {
                         fact.setFactValueById(evalId, value);
                     }
                 }
-                factRepository.addFact(fact);
+                ruleRepository.addRule(Question question);
             }
         }
-        return factRepository;
+        return ruleRepository;
     }
 }
