@@ -6,18 +6,18 @@ public class Question {
     }
 
     public String getId() {
-
+        return id;
     }
 
     public String getQuestion() {
-
+        return question;
     }
 
     public Answer getAnswer() {
-
+        return answer;
     }
 
     public boolean getEvaluatedAnswer(String input) {
-
+        return true;
     }
 }

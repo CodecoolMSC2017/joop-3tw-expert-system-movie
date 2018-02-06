@@ -11,7 +11,7 @@ public class FactParser extends XMLParser{
     Fact fact;
 
     public FactRepository getFactRepository() throws Exception {
-        loadXmlDocument("Facts.xml");
+        loadXmlDocument("data/Facts.xml");
         FactRepository factRepository = new FactRepository();
         for (Element ruleElement : getElements("Fact")) {
 

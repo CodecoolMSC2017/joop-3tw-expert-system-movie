@@ -12,7 +12,7 @@ public class Fact {
     }
 
     public Set<String> getIdSet() {
-
+        return valami;
     }
 
     public void setFactValueById(String id, boolean value) {
@@ -20,10 +20,10 @@ public class Fact {
     }
 
     public boolean getValueById(String id) {
-
+        return true;
     }
 
     public String getDescription() {
-
+        return description;
     }
 }
