@@ -35,7 +35,7 @@ public abstract class XMLParser {
     }
 
 
-    private Element[] getElements(String tagName) {
+    protected Element[] getElements(String tagName) {
         NodeList nodeList = document.getElementsByTagName(tagName);
         Element[] elements = new Element[nodeList.getLength()];
         for (int i = 0; i < nodeList.getLength(); i++) {

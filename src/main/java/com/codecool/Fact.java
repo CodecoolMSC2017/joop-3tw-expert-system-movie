@@ -4,7 +4,11 @@ import java.util.Set;
 
 public class Fact {
 
+    protected String id, description;
+
     public Fact(String id, String description) {
+        this.id = id;
+        this.description = description;
     }
 
     public Set<String> getIdSet() {
