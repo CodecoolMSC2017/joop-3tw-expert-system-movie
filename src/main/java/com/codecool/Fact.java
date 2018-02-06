@@ -12,7 +12,8 @@ public class Fact {
     }
 
     public Set<String> getIdSet() {
-        return valami;
+        Set<String> setString;
+        return setString;
     }
 
     public void setFactValueById(String id, boolean value) {

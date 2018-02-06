@@ -6,14 +6,17 @@ public class Question {
     }
 
     public String getId() {
+        String id = ""
         return id;
     }
 
     public String getQuestion() {
+        String question = "";
         return question;
     }
 
     public Answer getAnswer() {
+        Answer answer = new Answer();
         return answer;
     }
 

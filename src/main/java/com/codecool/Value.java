@@ -8,7 +8,8 @@ public abstract class Value {
     }
 
     public List<String> getInputPattern() {
-        return valami;
+        List<String> listString;
+        return listString;
     }
 
     public boolean getSelectionType() {
