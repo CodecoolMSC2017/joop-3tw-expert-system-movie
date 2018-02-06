@@ -21,7 +21,7 @@ public abstract class XMLParser {
 
         try {
 
-            File fXmlFile = new File(String xmlPath);
+            File fXmlFile = new File(xmlPath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
