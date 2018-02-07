@@ -1,21 +1,20 @@
 package com.codecool;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ESProvider {
 
     FactParser factParser;
     RuleParser ruleParser;
-    List<Question> rules;
+    private List<Question> rules;
+    private List<Fact> facts;
 
-    Map<String, Boolean> qa = new HashMap<>();
+    private Map<String, Boolean> qa = new HashMap<>();
     Answer answer;
-    List<Fact> facts;
+    private Iterator<Question> questionIterator;
+    private Iterator<Fact> factIterator;
 
-    RuleRepository ruleRepository;
+    private RuleRepository ruleRepository;
 
 
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
@@ -24,6 +23,7 @@ public class ESProvider {
         ruleRepository = ruleParser.getRuleRepository();
         //facts = factRepository.getFactList();
         rules = ruleRepository.getRuleList();
+        this.questionIterator = ruleRepository.getIterator();
     }
 
     public void collectAnswers() {
@@ -31,20 +31,21 @@ public class ESProvider {
         String line;
         answer = new Answer();
 
-        for (int i=0; i<rules.size();i++){
 
-            while (true) {
-                System.out.println(rules.get(i).getQuestion());
-                line = scanner.nextLine().toLowerCase();
-                if (("yes".equals(line) || "no".equals(line))) {
-                    break;
-                }
-                else{
-                    System.out.println("Wrong input! Please type yes or no for the question!");
-                }
+
+        while (questionIterator.hasNext()) {
+            Question q = questionIterator.next();
+            System.out.println(q.getQuestion());
+            line = scanner.nextLine().toLowerCase();
+            if (("yes".equals(line) || "no".equals(line))) {
+                break;
             }
-            qa.put(rules.get(i).getId(), answer.evaluateAnswerByInput(line));
+            else{
+                System.out.println("Wrong input! Please type yes or no for the question!");
+            }
+            qa.put(q.getId(), answer.evaluateAnswerByInput(line));
         }
+
     }
 
     public boolean getAnswerByQuestion(String questionId) {
