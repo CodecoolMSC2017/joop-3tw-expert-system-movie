@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 
 public class FactIterator implements Iterator<Fact> {
     private List<Fact> arr;
+    Fact fact;
     private int index = 0;
 
     public FactIterator(List<Fact> arr){
@@ -22,8 +23,10 @@ public class FactIterator implements Iterator<Fact> {
         if (!hasNext()){
             throw new NoSuchElementException();
         }
-        Fact fact = arr.get(index);
-        index++;
+        else{
+            fact = arr.get(index);
+            index++;
+        }
 
         return fact;
     }
