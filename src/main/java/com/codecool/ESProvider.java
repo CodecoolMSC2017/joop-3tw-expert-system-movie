@@ -33,7 +33,15 @@ public class ESProvider {
 
         for (int i=0; i<rules.size();i++){
             System.out.println(rules.get(i).getQuestion());
-            line = scanner.nextLine();
+            line = scanner.nextLine().toLowerCase();
+            while (true) {
+                if (("yes".equals(line) || "no".equals(line))) {
+                    break;
+                }
+                else{
+                    System.out.println("Wrong input! Please type yes or no for the question!");
+                }
+            }
             qa.put(rules.get(i).getId(), answer.evaluateAnswerByInput(line));
         }
     }
