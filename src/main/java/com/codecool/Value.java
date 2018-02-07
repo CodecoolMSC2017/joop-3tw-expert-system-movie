@@ -1,21 +1,17 @@
 package com.codecool;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Value {
 
-    List<String> listString;
-
-    public Value() {
-    }
+    protected boolean selectionType;
+    private List<String> values;
 
     public List<String> getInputPattern() {
-        listString = new ArrayList<>();
-        return listString;
+        return values;
     }
 
     public boolean getSelectionType() {
-        return true;
+        return selectionType;
     }
 }
