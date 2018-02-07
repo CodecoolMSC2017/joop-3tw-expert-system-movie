@@ -32,9 +32,10 @@ public class ESProvider {
         answer = new Answer();
 
         for (int i=0; i<rules.size();i++){
-            System.out.println(rules.get(i).getQuestion());
-            line = scanner.nextLine().toLowerCase();
+
             while (true) {
+                System.out.println(rules.get(i).getQuestion());
+                line = scanner.nextLine().toLowerCase();
                 if (("yes".equals(line) || "no".equals(line))) {
                     break;
                 }
