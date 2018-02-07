@@ -20,8 +20,8 @@ public class Main {
         rules = ruleRepository.getRuleList();
 
         for (int i=0; i<facts.size();i++){
-            System.out.println(facts.get(i).getIdSet());
             System.out.println(facts.get(i).getDescription());
+            System.out.println(facts.get(i).getIdSet());
         }
 
         System.out.println("------------------------------");

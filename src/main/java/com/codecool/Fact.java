@@ -5,10 +5,11 @@ import java.util.Set;
 
 public class Fact {
 
-    Set<String> setString;
-    private HashMap evals = new HashMap<String, Boolean>();
 
-    protected String id, description;
+    private HashMap evales = new HashMap<String, Boolean>();
+
+    protected String id;
+    protected String description;
 
     public Fact(String id, String description) {
         this.id = id;
@@ -16,16 +17,17 @@ public class Fact {
     }
 
     public Set<String> getIdSet() {
-        return setString;
+        return evales.keySet();
     }
 
     public void setFactValueById(String id, boolean value) {
-        evals.put(id, value);
+        evales.put(id, value);
 
     }
 
     public boolean getValueById(String id) {
-        return true;
+
+        return (Boolean) evales.get(id);
     }
 
     public String getDescription() {
