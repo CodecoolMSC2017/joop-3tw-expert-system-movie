@@ -1,13 +1,14 @@
 package com.codecool;
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class FactIterator implements Iterator<Fact> {
     private Fact[] arr;
     private int index = 0;
 
-    public FactIterator(Fact[] arr){
+    public FactIterator(List<Fact> arr){
         this.arr = arr;
     }
 
