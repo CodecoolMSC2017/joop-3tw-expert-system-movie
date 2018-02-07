@@ -1,10 +1,11 @@
 package com.codecool;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Answer {
 
-   List<Value> valueList;
+   protected List<Value> valueList = new ArrayList<>();
 
     public Boolean evaluateAnswerByInput(String input) {
 
@@ -19,6 +20,5 @@ public class Answer {
 
     public void addValue(Value value) {
         valueList.add(value);
-
     }
 }
