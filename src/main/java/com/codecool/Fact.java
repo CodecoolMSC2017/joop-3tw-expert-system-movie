@@ -1,10 +1,12 @@
 package com.codecool;
 
+import java.util.HashMap;
 import java.util.Set;
 
 public class Fact {
 
     Set<String> setString;
+    private HashMap evals = new HashMap<String, Boolean>();
 
     protected String id, description;
 
@@ -18,6 +20,7 @@ public class Fact {
     }
 
     public void setFactValueById(String id, boolean value) {
+        evals.put(id, value);
 
     }
 
