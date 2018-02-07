@@ -7,6 +7,7 @@ import java.util.List;
 public class FactRepository {
 
     private List<Fact> facts = new ArrayList<>();
+    private FactIterator fiter = new FactIterator(facts);
 
     public void addFact(Fact fact) {
         facts.add(fact);
@@ -17,7 +18,6 @@ public class FactRepository {
     }
 
     public Iterator<Fact> getIterator() {
-
-        return null;
+        return fiter;
     }
 }

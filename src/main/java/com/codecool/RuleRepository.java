@@ -6,9 +6,8 @@ import java.util.List;
 
 public class RuleRepository {
 
-
     private List<Question> rules = new ArrayList<>();
-
+    private QuestionIterator qiter = new QuestionIterator(rules);
 
     public void addRule(Question question) {
         rules.add(question);
@@ -19,7 +18,6 @@ public class RuleRepository {
     }
 
     public Iterator<Question> getIterator() {
-
-        return null;
+        return qiter;
     }
 }
