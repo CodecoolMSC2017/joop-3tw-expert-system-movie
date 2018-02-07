@@ -6,9 +6,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FactParser factParser = new FactParser();
-        RuleParser ruleParser = new RuleParser();
-        RuleRepository ruleRepository;
+        FactParser factParser;
+        RuleParser ruleParser;
+
+        ESProvider moviechoose = new ESProvider(factParser = new FactParser(), ruleParser = new RuleParser());
+
+        moviechoose.getAnswerByQuestion("funny");
+
+        /*RuleRepository ruleRepository;
         FactRepository factRepository;
         List<Question> rules;
         List<Fact> facts;
@@ -30,6 +35,6 @@ public class Main {
             System.out.println(rules.get(i).getId());
             System.out.println(rules.get(i).getQuestion());
             System.out.println(rules.get(i).getAnswer());
-        }
+        }*/
     }
 }
