@@ -39,18 +39,8 @@ public class ESProvider {
     }
 
     public boolean getAnswerByQuestion(String questionId) {
-        boolean answer = true;
-
-
-
-        for (int i=0; i<rules.size();i++){
-
-            if (rules.get(i).getId().equals(questionId)){
-                System.out.println(rules.get(i).getQuestion());
-
-            }
-        }
-
+        boolean answer;
+        answer = qa.get(questionId);
         return answer;
     }
 
