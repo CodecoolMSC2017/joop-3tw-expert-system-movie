@@ -6,9 +6,10 @@ import org.w3c.dom.NodeList;
 
 public class RuleParser extends XMLParser {
 
-    String id, question;
+    String id, q;
     boolean value;
     Question question;
+    Answer answer;
 
     public RuleRepository getRuleRepository() throws Exception {
         loadXmlDocument("data/Rules.xml");
@@ -19,19 +20,19 @@ public class RuleParser extends XMLParser {
             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
                 id = eElement.getAttribute("id");
-                question = eElement.getElementsByTagName("Question").item(0).getAttributes().getNamedItem("value").getNodeValue();
-                question = new Question(id, question);
+                q = eElement.getElementsByTagName("Question").item(0).getAttributes().getNamedItem("value").getNodeValue();
+                question = new Question(id, q, answer);
                 NodeList answers = eElement.getElementsByTagName("Answer");
                 for (int i = 0; i < answers.getLength(); i++) {
                     Node mNode = answers.item(i);
                     if(mNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element answer = (Element)mNode;
                         String value = answer.getAttribute("id");
-                        value = Boolean.parseBoolean(eval.getTextContent().trim());
-                        fact.setFactValueById(evalId, value);
+                        /*value = Boolean.parseBoolean(eval.getTextContent().trim());
+                        fact.setFactValueById(evalId, value);*/
                     }
                 }
-                ruleRepository.addRule(Question question);
+                ruleRepository.addRule(question);
             }
         }
         return ruleRepository;
