@@ -1,6 +1,8 @@
 package com.codecool;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ESProvider {
@@ -8,8 +10,11 @@ public class ESProvider {
     FactParser factParser;
     RuleParser ruleParser;
     List<Question> rules;
-    String line = "";
+
+    Map<String, Boolean> qa = new HashMap<>();
+    Answer answer;
     List<Fact> facts;
+
     RuleRepository ruleRepository;
 
 
@@ -22,27 +27,27 @@ public class ESProvider {
     }
 
     public void collectAnswers() {
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        answer = new Answer();
 
+        for (int i=0; i<rules.size();i++){
+            System.out.println(rules.get(i).getQuestion());
+            line = scanner.nextLine();
+            qa.put(rules.get(i).getId(), answer.evaluateAnswerByInput(line));
+        }
     }
 
     public boolean getAnswerByQuestion(String questionId) {
         boolean answer = true;
-        Scanner scanner;
-        scanner = new Scanner(System.in);
+
 
 
         for (int i=0; i<rules.size();i++){
 
             if (rules.get(i).getId().equals(questionId)){
                 System.out.println(rules.get(i).getQuestion());
-                line = scanner.nextLine();
 
-                if (line.equals("yes")){
-                    answer = true;
-                }
-                else if (line.equals("no")){
-                    answer = false;
-                }
             }
         }
 

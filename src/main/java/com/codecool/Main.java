@@ -11,7 +11,7 @@ public class Main {
 
         ESProvider moviechoose = new ESProvider(factParser = new FactParser(), ruleParser = new RuleParser());
 
-        moviechoose.getAnswerByQuestion("funny");
+        moviechoose.collectAnswers();
 
         /*RuleRepository ruleRepository;
         FactRepository factRepository;
