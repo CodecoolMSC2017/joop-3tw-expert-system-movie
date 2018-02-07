@@ -6,12 +6,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FactParser factParser;
-        RuleParser ruleParser;
+        ESProvider movieChoose = new ESProvider(new FactParser(), new RuleParser());
 
-        ESProvider moviechoose = new ESProvider(factParser = new FactParser(), ruleParser = new RuleParser());
-
-        moviechoose.collectAnswers();
+        movieChoose.collectAnswers();
 
         /*RuleRepository ruleRepository;
         FactRepository factRepository;
