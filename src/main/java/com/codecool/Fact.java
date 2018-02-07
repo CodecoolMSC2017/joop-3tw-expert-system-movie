@@ -4,6 +4,8 @@ import java.util.Set;
 
 public class Fact {
 
+    Set<String> setString;
+
     protected String id, description;
 
     public Fact(String id, String description) {
@@ -12,7 +14,6 @@ public class Fact {
     }
 
     public Set<String> getIdSet() {
-        Set<String> setString;
         return setString;
     }
 

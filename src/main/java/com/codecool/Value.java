@@ -1,14 +1,17 @@
 package com.codecool;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Value {
+
+    List<String> listString;
 
     public Value() {
     }
 
     public List<String> getInputPattern() {
-        List<String> listString;
+        listString = new ArrayList<>();
         return listString;
     }
 
