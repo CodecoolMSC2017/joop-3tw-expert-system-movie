@@ -1,39 +1,30 @@
 package com.codecool;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
-public class QuestionIterator implements Iterator<Question> {
+public class QuestionIterator implements Iterator {
 
-    private Question[] arrayList;
-    private int currentSize;
+    private int it;
+    private List<Question> list;
 
-    public QuestionIterator(Question[] newArray) {
-        this.arrayList = newArray;
-        this.currentSize = arrayList.length;
-}
+    public QuestionIterator(List<Question> list) {
+        this.list = list;
+    }
 
-    //@Override
-    public Iterator<Question> iterator() {
-        Iterator<Question> it = new Iterator<Question>() {
+    public boolean hasNext() {
+        if (it < list.size()) {
+            return true;
+        }
+        return false;
+    }
 
-            private int currentIndex = 0;
+    public Question next() {
+        Question question = list.get(it);
+        it++;
+        return question;
+    }
 
-            @Override
-            public boolean hasNext() {
-                return currentIndex < currentSize && arrayList[currentIndex] != null;
-            }
-
-            @Override
-            public Question next() {
-                return arrayList[currentIndex++];
-            }
-
-            @Override
-            public void remove() {
-                throw new UnsupportedOperationException();
-            }
-        };
-        return it;
+    public void remove() {
     }
 }
