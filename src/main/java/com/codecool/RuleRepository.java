@@ -7,7 +7,7 @@ import java.util.List;
 public class RuleRepository {
 
 
-    private List<Question> rules = new ArrayList<Question>();
+    private List<Question> rules = new ArrayList<>();
 
 
     public void addRule(Question question) {

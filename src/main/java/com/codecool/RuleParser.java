@@ -11,13 +11,13 @@ public class RuleParser extends XMLParser {
     Question question;
     Answer answer;
 
-    public RuleRepository getRuleRepository() throws Exception {
+    public RuleRepository getRuleRepository() {
         loadXmlDocument("data/Rules.xml");
         RuleRepository ruleRepository = new RuleRepository();
         for (Element ruleElement : getElements("Rule")) {
             id = ruleElement.getAttribute("id");
             Node questionElement = ruleElement.getElementsByTagName("Question").item(0);
-            q = questionElement.getTextContent().getNamedItem("value").getNodeValue();
+            q = questionElement.getTextContent();
             this.question = new Question(id, q, answer);
             Element answerElement = (Element) ruleElement.getElementsByTagName("Answer").item(0);
             NodeList selectionNodes = answerElement.getElementsByTagName("Selection");

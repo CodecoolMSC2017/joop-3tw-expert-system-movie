@@ -10,7 +10,7 @@ public class FactParser extends XMLParser{
     boolean value;
     Fact fact;
 
-    public FactRepository getFactRepository() throws Exception {
+    public FactRepository getFactRepository() {
         loadXmlDocument("data/Facts.xml");
         FactRepository factRepository = new FactRepository();
         for (Element factElement : getElements("Fact")) {
