@@ -40,10 +40,10 @@
         <Question>Do you want a realistic movie?</Question>
         <Answer>
             <Selection value="true">
-                <MultipleValue value="drama,comedy,action,documentary"/>
+                <SingleValue value="yes"/>
             </Selection>
             <Selection value="false">
-                <MultipleValue value="sci-fi,fantasy,animation,horror"/>
+                <SingleValue value="no"/>
             </Selection>
         </Answer>
     </Rule>
