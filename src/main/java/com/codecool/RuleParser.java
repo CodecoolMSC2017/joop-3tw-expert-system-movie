@@ -14,27 +14,32 @@ public class RuleParser extends XMLParser {
     public RuleRepository getRuleRepository() {
         loadXmlDocument("data/Rules.xml");
         RuleRepository ruleRepository = new RuleRepository();
+
         for (Element ruleElement : getElements("Rule")) {
             id = ruleElement.getAttribute("id");
             Node questionElement = ruleElement.getElementsByTagName("Question").item(0);
             q = questionElement.getTextContent();
-            this.question = new Question(id, q, answer);
+
             Element answerElement = (Element) ruleElement.getElementsByTagName("Answer").item(0);
             NodeList selectionNodes = answerElement.getElementsByTagName("Selection");
+
             for (int i = 0; i < selectionNodes.getLength(); i++) {
                 Element selectionElement = (Element) selectionNodes.item(i);
+                String selectionValue = selectionElement.getAttribute("value");
 
                 NodeList singleValueNodes = selectionElement.getElementsByTagName("SingleValue");
                 NodeList multipleValueNodes = selectionElement.getElementsByTagName("MultipleValue");
 
                 if (singleValueNodes.getLength() == 0) {
                     Element multipleValueElement = (Element) multipleValueNodes.item(0);
+                    System.out.println(multipleValueElement.getTagName());
                 } else {
                     Element singleValueElement = (Element) singleValueNodes.item(0);
+                    System.out.println(singleValueElement.getAttribute("value"));
                 }
             }
-            /*value = Boolean.parseBoolean(eval.getTextContent().trim());
-            fact.setFactValueById(evalId, value);*/
+
+            this.question = new Question(id, q, answer);
             ruleRepository.addRule(this.question);
         }
         return ruleRepository;
