@@ -23,11 +23,13 @@ class FactParserTest {
 
     @Test
     void getFactRepository() {
+        assertEquals("scifa", factParser.getFactRepository().getFactList().get(0).id);
+        assertEquals("documentary", factParser.getFactRepository().getFactList().get(6).id);
     }
 
     @Test
     void loadXmlDocument() {
-
+        assertThrows(FileNotFoundException.class, () ->factParser.loadXmlDocument("data.xml"));
     }
 
     @Test
