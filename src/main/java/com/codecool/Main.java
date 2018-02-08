@@ -42,6 +42,14 @@ public class Main {
                     System.out.println("\n\n\n\n");
                     break;
 
+                case "2":
+                    if (movieChoose.output.equals("")){
+                        System.out.println("\n\nNothing here mate! Get a new one first ;)\n\n");
+                    }else {
+                        System.out.println("\n\nOur last suggestion to you was: " + movieChoose.output + "\n\n");
+                    }
+                    break;
+
                 case "3":
                     System.exit(0);
 
