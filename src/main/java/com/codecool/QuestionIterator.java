@@ -29,6 +29,4 @@ public class QuestionIterator implements Iterator {
         return question;
     }
 
-    public void remove() {
-    }
 }
