@@ -36,6 +36,7 @@ public class ESProvider {
         while (questionIterator.hasNext()) {
             Question question = questionIterator.next();
             System.out.println(question.getQuestion());
+            System.out.println("\033[32mPlease write: yes/no\033[0m");
             line = scanner.nextLine().toLowerCase();
 
             while (true){
