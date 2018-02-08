@@ -48,6 +48,7 @@ public class Main {
                     }else {
                         System.out.println("\n\nOur last suggestion to you was: " + movieChoose.output + "\n\n");
                     }
+                    TimeUnit.SECONDS.sleep(3);
                     break;
 
                 case "3":
