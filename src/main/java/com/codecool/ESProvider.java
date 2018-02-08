@@ -62,7 +62,7 @@ public class ESProvider {
     }
 
     public void evaluate() {
-        Scanner scanner = new Scanner(System.in);
+        
         String factString = "";
         String temp = "";
 
