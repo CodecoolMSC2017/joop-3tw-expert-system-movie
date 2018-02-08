@@ -7,15 +7,15 @@ public class Answer {
 
    protected List<Value> valueList = new ArrayList<>();
 
-    public Boolean evaluateAnswerByInput(String input) {
+    public boolean evaluateAnswerByInput(String input) {
 
         if (input.equals("yes")){
-            return Boolean.TRUE;
+            return true;
         }
         else if (input.equals("no")){
-            return Boolean.FALSE;
+            return false;
         }
-        return Boolean.FALSE;
+        return false;
     }
 
     public void addValue(Value value) {
