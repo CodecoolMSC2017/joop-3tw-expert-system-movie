@@ -41,6 +41,7 @@ class QuestionIteratorTest {
 
     @Test
     void next() {
+
         assertEquals(b.getQuestion(), questionIterator.next().getQuestion(), "must be b");
     }
 }

@@ -14,7 +14,7 @@ public class FactIterator implements Iterator<Fact> {
     }
 
     @Override
-    public boolean hasNext(){
+    public boolean hasNext() {
         return index < arr.size();
     }
 
