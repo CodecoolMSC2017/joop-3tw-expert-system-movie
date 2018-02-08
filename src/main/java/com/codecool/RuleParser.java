@@ -6,12 +6,10 @@ import org.w3c.dom.NodeList;
 
 public class RuleParser extends XMLParser {
 
-    String id, q;
-    boolean value;
-    Question question;
-    Answer answer = new Answer();
-    Value singleValue;
-    Value multipleValue;
+    private String id, q;
+    private Question question;
+    private Answer answer = new Answer();
+
 
     public RuleRepository getRuleRepository() {
 

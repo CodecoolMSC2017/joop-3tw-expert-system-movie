@@ -16,7 +16,6 @@ public class ESProvider {
 
     private RuleRepository ruleRepository;
     private FactRepository factRepository;
-    private String qaString = "";
 
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
         this.factParser = factParser;
@@ -49,7 +48,6 @@ public class ESProvider {
                     line = scanner.nextLine().toLowerCase();
                 }
             }
-            qaString += question.getEvaluatedAnswer(line);
             qa.put(question.getId(), question.getEvaluatedAnswer(line));
         }
 
@@ -65,11 +63,13 @@ public class ESProvider {
 
         String factString = "";
         String temp = "";
+        String qaString = "";
 
         while (factIterator.hasNext()) {
             Fact facts = factIterator.next();
             for(String s:qa.keySet()) {
                 factString += facts.getValueById(s);
+                qaString += getAnswerByQuestion(s);
             }
 
             if(factString.equals(qaString)) {
