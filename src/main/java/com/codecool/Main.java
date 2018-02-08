@@ -24,13 +24,13 @@ public class Main {
                 System.out.flush();
             }
 
-            System.out.println("Expert System: Movies!");
+            System.out.println("\033[37mExpert System: Movies!\033[0m");
             System.out.println("----------------------");
-            System.out.println("1. START");
-            System.out.println("2. Show last suggestion");
-            System.out.println("3. Exit");
+            System.out.println("\033[36m1. START\033[0m");
+            System.out.println("\033[36m2. Show last suggestion\033[0m");
+            System.out.println("\033[36m3. Exit\033[0m");
             System.out.println("----------------------\n");
-            System.out.println("Please type your choice! (single number)");
+            System.out.println("\033[37mPlease type your choice!\033[0m"+"\033[32m(single number)\033[0m");
             line = scanner.nextLine();
 
             switch (line){
@@ -38,15 +38,15 @@ public class Main {
                     movieChoose.collectAnswers();
                     movieChoose.evaluate();
                     System.out.println();
-                    TimeUnit.SECONDS.sleep(3);
+                    TimeUnit.SECONDS.sleep(4);
                     System.out.println("\n\n\n\n");
                     break;
 
                 case "2":
                     if (movieChoose.output.equals("")){
-                        System.out.println("\n\nNothing here mate! Get a new one first ;)\n\n");
+                        System.out.println("\n\n\033[31mNothing here mate! Get a new one first ;)\033[0m\n\n");
                     }else {
-                        System.out.println("\n\nOur last suggestion to you was: " + movieChoose.output + "\n\n");
+                        System.out.println("\n\n\033[37mOur last suggestion to you was: \033[0m" + movieChoose.output + "\n\n");
                     }
                     TimeUnit.SECONDS.sleep(3);
                     break;
@@ -55,7 +55,7 @@ public class Main {
                     System.exit(0);
 
                 default:
-                    System.out.println("\nNo such choice! In order to choose please type the number of the menu choice you want to use!");
+                    System.out.println("\n\033[31mNo such choice! In order to choose please type the number of the menu choice you want to use!\033[0m");
 
             }
         }

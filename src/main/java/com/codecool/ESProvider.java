@@ -37,7 +37,7 @@ public class ESProvider {
         while (questionIterator.hasNext()) {
             Question question = questionIterator.next();
             System.out.println(question.getQuestion());
-            System.out.println("\033[32mPlease write: yes/no\033[0m");
+            System.out.println("\033[37mPlease type: "+"\033[32myes/no\033[0m");
             line = scanner.nextLine().toLowerCase();
 
             while (true){
@@ -45,7 +45,7 @@ public class ESProvider {
                     break;
                 }
                 else{
-                    System.out.println("Wrong input! Please type yes or no for the question!");
+                    System.out.println("\033[31mWrong input! Please type yes or no for the question!\033[0m");
                     System.out.println(question.getQuestion());
                     line = scanner.nextLine().toLowerCase();
                 }
@@ -77,11 +77,11 @@ public class ESProvider {
                 output = facts.getDescription();
                 break;
             } else {
-                output = "Go to Hell";
+                output = "\033[31mGo to Hell\033[0m";
             }
             factString = "";
             qaString = "";
         }
-        System.out.println("What you should try: " + output);
+        System.out.println("\033[36mWhat you should try: \033[0m" + output);
     }
 }
