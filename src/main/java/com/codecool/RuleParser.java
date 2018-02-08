@@ -16,7 +16,12 @@ public class RuleParser extends XMLParser {
         String selectionValue;
         boolean selectionBool = true;
 
-        loadXmlDocument("data/Rules.xml");
+        try {
+            loadXmlDocument("data/Rules.xml");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         RuleRepository ruleRepository = new RuleRepository();
 
         for (Element ruleElement : getElements("Rule")) {

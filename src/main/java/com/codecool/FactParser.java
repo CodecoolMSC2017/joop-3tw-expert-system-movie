@@ -11,8 +11,14 @@ public class FactParser extends XMLParser{
     Fact fact;
 
     public FactRepository getFactRepository() {
-        loadXmlDocument("data/Facts.xml");
+        try {
+            loadXmlDocument("data/Facts.xml");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         FactRepository factRepository = new FactRepository();
+
         for (Element factElement : getElements("Fact")) {
 
             id = factElement.getAttribute("id");
