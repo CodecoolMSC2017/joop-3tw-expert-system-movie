@@ -79,6 +79,7 @@ public class ESProvider {
                 temp = "Go to Hell";
             }
             factString = "";
+            qaString = "";
         }
         System.out.println(temp);
     }
