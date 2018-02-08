@@ -26,7 +26,7 @@ public class Main {
 
             System.out.println("Expert System: Movies!");
             System.out.println("----------------------");
-            System.out.println("1. New help");
+            System.out.println("1. START");
             System.out.println("2. Show last suggestion");
             System.out.println("3. Exit");
             System.out.println("----------------------\n");
