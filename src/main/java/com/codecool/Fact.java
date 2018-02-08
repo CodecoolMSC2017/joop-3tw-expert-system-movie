@@ -9,7 +9,7 @@ public class Fact {
     private HashMap evales = new HashMap<String, Boolean>();
 
     protected String id;
-    protected String description;
+    private String description;
 
     public Fact(String id, String description) {
         this.id = id;
