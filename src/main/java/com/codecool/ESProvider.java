@@ -31,18 +31,22 @@ public class ESProvider {
         String line;
         answer = new Answer();
 
-
-
         while (questionIterator.hasNext()) {
             Question q = questionIterator.next();
             System.out.println(q.getQuestion());
             line = scanner.nextLine().toLowerCase();
-            if (("yes".equals(line) || "no".equals(line))) {
-                break;
+
+            while (true){
+                if (("yes".equals(line) || "no".equals(line))) {
+                    break;
+                }
+                else{
+                    System.out.println("Wrong input! Please type yes or no for the question!");
+                    System.out.println(q.getQuestion());
+                    line = scanner.nextLine().toLowerCase();
+                }
             }
-            else{
-                System.out.println("Wrong input! Please type yes or no for the question!");
-            }
+            
             qa.put(q.getId(), answer.evaluateAnswerByInput(line));
         }
 
