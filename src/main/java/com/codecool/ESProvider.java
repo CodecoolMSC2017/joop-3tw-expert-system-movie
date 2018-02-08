@@ -81,6 +81,6 @@ public class ESProvider {
             factString = "";
             qaString = "";
         }
-        System.out.println(temp);
+        System.out.println("What you should try: " + temp);
     }
 }
