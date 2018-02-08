@@ -11,7 +11,6 @@ public class ESProvider {
 
     private Map<String, Boolean> qa = new HashMap<>();
     Answer answer;
-    Question question;
     private Iterator<Question> questionIterator;
     private Iterator<Fact> factIterator;
 
@@ -33,8 +32,8 @@ public class ESProvider {
         answer = new Answer();
 
         while (questionIterator.hasNext()) {
-            Question q = questionIterator.next();
-            System.out.println(q.getQuestion());
+            Question question = questionIterator.next();
+            System.out.println(question.getQuestion());
             line = scanner.nextLine().toLowerCase();
 
             while (true){
@@ -43,12 +42,12 @@ public class ESProvider {
                 }
                 else{
                     System.out.println("Wrong input! Please type yes or no for the question!");
-                    System.out.println(q.getQuestion());
+                    System.out.println(question.getQuestion());
                     line = scanner.nextLine().toLowerCase();
                 }
             }
 
-            qa.put(q.getId(), answer.evaluateAnswerByInput(line));
+            qa.put(question.getId(), question.getEvaluatedAnswer(line));
         }
 
     }
