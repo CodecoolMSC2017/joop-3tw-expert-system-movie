@@ -9,21 +9,24 @@ public class ESProvider {
     private List<Question> rules;
     private List<Fact> facts;
 
-    private Map<String, Boolean> qa = new HashMap<>();
+    private Map<String, Boolean> qa = new LinkedHashMap<>();
     Answer answer;
     private Iterator<Question> questionIterator;
     private Iterator<Fact> factIterator;
 
     private RuleRepository ruleRepository;
-
+    private FactRepository factRepository;
+    private String qaString = "";
 
     public ESProvider(FactParser factParser, RuleParser ruleParser) {
         this.factParser = factParser;
         this.ruleParser = ruleParser;
         ruleRepository = ruleParser.getRuleRepository();
-        //facts = factRepository.getFactList();
+        factRepository = factParser.getFactRepository();
+        facts = factRepository.getFactList();
         rules = ruleRepository.getRuleList();
         this.questionIterator = ruleRepository.getIterator();
+        this.factIterator = factRepository.getIterator();
     }
 
     public void collectAnswers() {
@@ -46,7 +49,7 @@ public class ESProvider {
                     line = scanner.nextLine().toLowerCase();
                 }
             }
-
+            qaString += question.getEvaluatedAnswer(line);
             qa.put(question.getId(), question.getEvaluatedAnswer(line));
         }
 
@@ -58,8 +61,29 @@ public class ESProvider {
         return answer;
     }
 
-    public String evaluate() {
-        String string = "";
-        return string;
+    public void evaluate() {
+        Scanner scanner = new Scanner(System.in);
+        String factString = "";
+        String temp = "";
+
+
+
+        while (factIterator.hasNext()) {
+            Fact facts = factIterator.next();
+            for(String s:qa.keySet()) {
+                factString += facts.getValueById(s);
+
+            }
+
+            if(factString.equals(qaString)) {
+                temp = facts.getDescription();
+                break;
+            } else {
+                temp = "Go to Hell";
+            }
+            factString = "";
+        }
+        System.out.println(temp);
+
     }
 }

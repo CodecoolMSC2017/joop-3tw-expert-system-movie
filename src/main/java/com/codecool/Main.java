@@ -10,6 +10,8 @@ public class Main {
 
         movieChoose.collectAnswers();
 
+        movieChoose.evaluate();
+
         /*RuleRepository ruleRepository;
         FactRepository factRepository;
         List<Question> rules;
