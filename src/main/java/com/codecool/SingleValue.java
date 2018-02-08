@@ -8,4 +8,8 @@ public class SingleValue extends Value {
         this.param = param;
         this.selectionType = selectionType;
     }
+
+    public String getParam() {
+        return param;
+    }
 }
