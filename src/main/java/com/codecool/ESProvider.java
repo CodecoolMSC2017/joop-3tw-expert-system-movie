@@ -9,6 +9,7 @@ public class ESProvider {
     private List<Question> rules;
     private List<Fact> facts;
 
+    protected String output = "";
     private Map<String, Boolean> qa = new LinkedHashMap<>();
     Answer answer;
     private Iterator<Question> questionIterator;
@@ -63,7 +64,6 @@ public class ESProvider {
     public void evaluate() {
 
         String factString = "";
-        String temp = "";
         String qaString = "";
 
         while (factIterator.hasNext()) {
@@ -74,14 +74,14 @@ public class ESProvider {
             }
 
             if(factString.equals(qaString)) {
-                temp = facts.getDescription();
+                output = facts.getDescription();
                 break;
             } else {
-                temp = "Go to Hell";
+                output = "Go to Hell";
             }
             factString = "";
             qaString = "";
         }
-        System.out.println("What you should try: " + temp);
+        System.out.println("What you should try: " + output);
     }
 }
