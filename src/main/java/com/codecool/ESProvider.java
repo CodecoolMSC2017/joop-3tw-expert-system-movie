@@ -11,6 +11,7 @@ public class ESProvider {
 
     private Map<String, Boolean> qa = new HashMap<>();
     Answer answer;
+    Question question;
     private Iterator<Question> questionIterator;
     private Iterator<Fact> factIterator;
 
@@ -46,7 +47,7 @@ public class ESProvider {
                     line = scanner.nextLine().toLowerCase();
                 }
             }
-            
+
             qa.put(q.getId(), answer.evaluateAnswerByInput(line));
         }
 
