@@ -3,11 +3,14 @@ package com.codecool;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
+        final String ANSI_CLS = "\u001b[2J";
+        final String ANSI_HOME = "\u001b[H";
         Scanner scanner = new Scanner(System.in);
         String line;
         ESProvider movieChoose = new ESProvider(new FactParser(), new RuleParser());
@@ -17,12 +20,15 @@ public class Main {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             }
             else if (System.getProperty("os.name").equals("linux")){
-                System.out.print("\\033\\143");
+                System.out.print(ANSI_CLS + ANSI_HOME);
+                System.out.flush();
             }
+
             System.out.println("Expert System: Movies!");
             System.out.println("----------------------");
             System.out.println("1. New help");
-            System.out.println("2. Exit");
+            System.out.println("2. Show last suggestion");
+            System.out.println("3. Exit");
             System.out.println("----------------------\n");
             System.out.println("Please type your choice! (single number)");
             line = scanner.nextLine();
@@ -31,9 +37,12 @@ public class Main {
                 case "1":
                     movieChoose.collectAnswers();
                     movieChoose.evaluate();
+                    System.out.println();
+                    TimeUnit.SECONDS.sleep(3);
+                    System.out.println("\n\n\n\n");
                     break;
 
-                case "2":
+                case "3":
                     System.exit(0);
 
                 default:
