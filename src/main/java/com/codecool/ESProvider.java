@@ -62,17 +62,14 @@ public class ESProvider {
     }
 
     public void evaluate() {
-        
+
         String factString = "";
         String temp = "";
-
-
 
         while (factIterator.hasNext()) {
             Fact facts = factIterator.next();
             for(String s:qa.keySet()) {
                 factString += facts.getValueById(s);
-
             }
 
             if(factString.equals(qaString)) {
@@ -84,6 +81,5 @@ public class ESProvider {
             factString = "";
         }
         System.out.println(temp);
-
     }
 }
