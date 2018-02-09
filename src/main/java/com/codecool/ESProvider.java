@@ -33,7 +33,7 @@ public class ESProvider {
 
         while (questionIterator.hasNext()) {
             Question question = questionIterator.next();
-            System.out.println(question.getQuestion());
+            System.out.println("\n" + question.getQuestion());
             System.out.println("\033[37mPlease type: "+"\033[32myes/no\033[0m");
             line = scanner.nextLine().toLowerCase();
 
@@ -80,6 +80,6 @@ public class ESProvider {
             factString = "";
             qaString = "";
         }
-        System.out.println("\033[36mWhat you should try: \033[0m" + output);
+        System.out.println("\n\n\033[36mWhat you should try: \033[0m" + output);
     }
 }
