@@ -12,8 +12,6 @@ public class ESProvider {
     protected String output = "";
     private Map<String, Boolean> qa = new LinkedHashMap<>();
     Answer answer;
-    private Iterator<Question> questionIterator;
-    private Iterator<Fact> factIterator;
 
     private RuleRepository ruleRepository;
     private FactRepository factRepository;
@@ -25,14 +23,13 @@ public class ESProvider {
         factRepository = factParser.getFactRepository();
         facts = factRepository.getFactList();
         rules = ruleRepository.getRuleList();
-        this.questionIterator = ruleRepository.getIterator();
-        this.factIterator = factRepository.getIterator();
     }
 
     public void collectAnswers() {
         Scanner scanner = new Scanner(System.in);
         String line;
         answer = new Answer();
+        Iterator<Question> questionIterator = ruleRepository.getIterator();
 
         while (questionIterator.hasNext()) {
             Question question = questionIterator.next();
@@ -65,6 +62,7 @@ public class ESProvider {
 
         String factString = "";
         String qaString = "";
+        Iterator<Fact> factIterator = factRepository.getIterator();
 
         while (factIterator.hasNext()) {
             Fact facts = factIterator.next();
